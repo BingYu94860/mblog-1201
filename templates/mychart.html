@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+<!-- 我是分隔線 -->
+{% block title %} 我的統計圖表 {% endblock %}
+<!-- 我是分隔線 -->
+{% block titlemessage %}
+<h1>我的統計圖表</h1>
+{% endblock %}
+<!-- 我是分隔線 -->
+{% block content %}
+<center>
+  <div class="dropdown">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      store
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="/mychart/">ALL</a>
+      {% for branch in branches %}
+      <a class="dropdown-item" href="/mychart/{{branch.id}}/"
+        >{{branch.title}}</a
+      >
+      {% endfor %}
+    </div>
+  </div>
+  <table width="800">
+    <tr>
+      <td>
+        <canvas id="myChart" width="800" height="400"></canvas>
+      </td>
+    </tr>
+  </table>
+</center>
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'bar', //圖表類型
+      data: {
+          // 標題
+          labels: [
+              {% for item in data %}
+                  '{{ item.income_year }}年{{ item.income_month }}月 {{ item.branch }}',
+              {% endfor %}
+          ],
+          datasets: [{
+              // 標籤
+              label: "圖例",
+              // 資料
+              data: [
+                  {% for item in data %}
+                      '{{ item.income }}',
+                  {% endfor %}
+              ],
+              // 背景色
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              // 外框寬度
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });
+</script>
+{% endblock %}

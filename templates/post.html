@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<!-- 我是區塊分隔線 -->
+{% block title %}
+{{ post.title }}
+{% endblock %}
+<!-- 我是區塊分隔線 -->
+{% block titlemessage %}
+<h1>{{post.title}}</h1>
+{% endblock %}
+<!-- 我是區塊分隔線 -->
+{% block content %}
+<div class="card">
+  <div class="card-header">{{ post.title }}</div>
+  <div class="card-body">{{ post.body | linebreaks }}</div>
+  <div class="card-footer">{{ post.pub_date }}</div>
+</div>
+{% endblock %}
