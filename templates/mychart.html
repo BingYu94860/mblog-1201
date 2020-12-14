@@ -9,25 +9,26 @@
 {% block content %}
 <center>
   <div class="dropdown">
-    <button
-      class="btn btn-secondary dropdown-toggle"
-      type="button"
-      id="dropdownMenuButton"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      store
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <button class="dropbtn">store</button>
+    <div class="dropdown-content">
       <a class="dropdown-item" href="/mychart/">ALL</a>
       {% for branch in branches %}
-      <a class="dropdown-item" href="/mychart/{{branch.id}}/"
-        >{{branch.title}}</a
-      >
+      <a href="/mychart/{{branch.id}}/">{{branch.title}}</a>
       {% endfor %}
     </div>
   </div>
+  <!-- 分隔線 -->
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">store</button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="/mychart/">ALL</a>
+      {% for branch in branches %}
+      <a class="dropdown-item" href="/mychart/{{branch.id}}/">{{branch.title}}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- 分隔線 -->
   <table width="800">
     <tr>
       <td>
@@ -78,13 +79,13 @@
           }]
       },
       options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero: true
-                  }
-              }]
-          }
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
       }
   });
 </script>

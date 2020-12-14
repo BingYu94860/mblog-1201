@@ -1,3 +1,17 @@
+# first push
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/用戶名/倉庫名稱.git
+git push -u origin main
+                
+# re push
+git remote add origin https://github.com/b/倉庫名稱.git
+git branch -M main
+git push -u origin main
+
+  
 …or create a new repository on the command line
 
 echo "# mblog-1201" >> README.md
