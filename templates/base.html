@@ -15,6 +15,27 @@
     body {
       font-family: 微軟正黑體;
     }
+    .bg-text {
+      text-align: center;
+      color: red;
+      opacity: 1.0;
+    }
+    .bg-box {
+      z-index: 0;
+      position: relative;
+      margin: 0 auto;
+    }
+    .bg-box::before {
+      z-index: -1;
+      position: absolute;
+      left: 0;right: 0;top: 0;bottom: 0;
+      content: '';
+      background-image: url(https://p2.bahamut.com.tw/B/2KU/21/0001529221.JPG);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.3;
+    }
     .dropbtn {
       background-color: #4CAF50;
       color: white;
@@ -41,9 +62,15 @@
       text-decoration: none;
       display: block;
     }
-    .dropdown-content a:hover {background-color: #f1f1f1}
-    .dropdown:hover .dropdown-content {display: block;}
-    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
   </style>
 </head>
 <body>
