@@ -11,7 +11,7 @@ git add .
 git commit -m "No.2 commit"
 git branch -M main
 git remote add origin https://github.com/用戶名/倉庫名稱.git
-git push -u origin main
+git push
 
   
 …or create a new repository on the command line

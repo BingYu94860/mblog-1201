@@ -2,11 +2,11 @@
 <!-- 我是區塊分隔線 -->
 {% block title %}
 OOO的網站
-{% endblock %} 
+{% endblock %}
 <!-- 我是區塊分隔線 -->
 {% block titlemessage %}
-  <h1>OOO的上課用Django示範網站</h1>
-{% endblock %} 
+<h1>OOO的上課用Django示範網站</h1>
+{% endblock %}
 <!-- 我是區塊分隔線 -->
 {% block content %}
 <table class="table table-striped">
@@ -18,12 +18,10 @@ OOO的網站
   {% for post in posts %}
   <tr>
     <td>{{ post.id }}</td>
-    <td>
-      <a href="/post/{{post.slug}}/">{{ post.title }}</a>
-    </td>
+    <td> <a href="/post/{{post.slug}}/">{{ post.title }}</a> </td>
     <td>{{ post.pub_date }}</td>
   </tr>
   {% endfor %}
 </table>
-本網頁被瀏覽了{{ hit_count }}次 
+本網頁被瀏覽了{{ hit_count }}次
 {% endblock %}
