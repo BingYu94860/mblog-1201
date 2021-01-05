@@ -1,0 +1,50 @@
+[
+    {
+        "income_year": "2020",
+        "income_month": "11",
+        "income": 250000,
+        "branch.title": "\u6960\u6893\u5e97"
+    },
+    {
+        "income_year": "2020",
+        "income_month": "11",
+        "income": 3000000,
+        "branch.title": "\u5de6\u71df\u5e97"
+    },
+    {
+        "income_year": "2020",
+        "income_month": "11",
+        "income": 50000,
+        "branch.title": "\u6797\u5712\u5e97"
+    },
+    {
+        "income_year": "2020",
+        "income_month": "11",
+        "income": 100000,
+        "branch.title": "\u5c0f\u6e2f\u5e97"
+    },
+    {
+        "income_year": "2020",
+        "income_month": "11",
+        "income": 200000,
+        "branch.title": "\u9cf3\u5c71\u5e97"
+    },
+    {
+        "income_year": "2020",
+        "income_month": "12",
+        "income": 987654,
+        "branch.title": "\u6960\u6893\u5e97"
+    },
+    {
+        "income_year": "2020",
+        "income_month": "12",
+        "income": 1000000,
+        "branch.title": "\u6797\u5712\u5e97"
+    },
+    {
+        "income_year": "2021",
+        "income_month": "1",
+        "income": 50000,
+        "branch.title": "\u6bcf\u65e5\u5e97"
+    }
+]
