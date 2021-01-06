@@ -1,14 +1,12 @@
 import os, django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mblog.settings') # 需對應 wsgi.py
 django.setup()
-print(f'當前路徑: {os.getcwd()}')
-
-from mainsite.models import Post, Branch, StoreIncome
 # 更多操作請參考官方文檔: https://docs.djangoproject.com/en/3.1/topics/db/models/
-
+from mainsite.models import Post, Branch, StoreIncome
 #=============================================================================#
 # 添加一筆資料
-# Post.objects.create(title="文章標題", slug="px", body='文章內容')
+# post = Post.objects.create(title="文章標題", slug="px", body='文章內容')
+# post.save()
 
 posts = Post.objects.all()
 print(f'\nPost class 內資料: {posts}')
@@ -19,7 +17,8 @@ for i, post in enumerate(posts):
 print('\n')
 #=============================================================================#
 # 添加一筆資料
-# Branch.objects.create(title="每日店", name="美麗店長")
+# store = Branch.objects.create(title="每日店", name="美麗店長")
+# store.save()
 
 stores = Branch.objects.all()
 print(f'\nBranch class 內資料: {stores}')
@@ -31,6 +30,7 @@ print('\n')
 # 添加一筆資料
 # store = Branch.objects.get(title="每日店")
 # store_income = StoreIncome.objects.create(income_year=2021, income_month=1, income=50000, branch=store)
+# store_income.save()
 
 data = StoreIncome.objects.all()
 print(f'\nStoreIncome class 內資料: {data}')

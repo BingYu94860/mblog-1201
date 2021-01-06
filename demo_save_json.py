@@ -1,15 +1,11 @@
 import os, django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mblog.settings') # 需對應 wsgi.py
 django.setup()
-print(f'當前路徑: {os.getcwd()}')
-
-from mainsite.models import Post, Branch, StoreIncome
 # 更多操作請參考官方文檔: https://docs.djangoproject.com/en/3.1/topics/db/models/
-
+from mainsite.models import Post, Branch, StoreIncome
 import json
 from django.core.serializers.json import DjangoJSONEncoder
 #=============================================================================#
-
 posts = Post.objects.all()
 post_dict_list = []
 for post in posts:
@@ -27,7 +23,6 @@ with open('Post.json', 'w') as fp:
     fp.write(post_json)
 
 #=============================================================================#
-
 stores = Branch.objects.all()
 store_dict_list = []
 for store in stores:
@@ -43,7 +38,6 @@ with open('Branch.json', 'w') as fp:
     fp.write(stores_json)
 
 #=============================================================================#
-
 data = StoreIncome.objects.all()
 store_income_dict_list = []
 for store_income in data:
